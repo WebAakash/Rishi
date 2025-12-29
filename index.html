@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramrishi Maurya - Production & Merchandising</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #2c1810;
+            --primary-brown: #4a3728;
+            --secondary-brown: #6b563f;
+            --gold: #d4af37;
+            --gold-dark: #b8941e;
+            --cream: #f5f1e8;
+            --cream-light: #faf8f3;
+            --white: #ffffff;
+            --text-dark: #2c1810;
+            --text-light: #6b563f;
+            --accent-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            --bg-luxury: #faf8f3;
+            --radius-lg: 32px;
+            --radius-pill: 999px;
+            --shadow-luxury: 0 10px 40px rgba(44, 24, 16, 0.08);
+            --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-luxury);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 3rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .profile-hero-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-luxury);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+            animation: slideInLeft 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.03) 0%, transparent 70%);
+            animation: rotateBackground 20s linear infinite;
+        }
+
+        @keyframes rotateBackground {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-hero-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .hero-profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--cream);
+            box-shadow: 0 8px 24px rgba(212,175,55,0.2);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInScale 1s ease-out 0.3s backwards;
+        }
+
+        .hero-profile-img::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .profile-hero-card:hover .hero-profile-img::after {
+            opacity: 1;
+            inset: -8px;
+        }
+
+        .hero-profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .profile-hero-card:hover .hero-profile-img img {
+            transform: scale(1.05);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-role {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
+        }
+
+        .hero-contact-info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--cream-light);
+            border-radius: var(--radius-pill);
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            animation: fadeInRight 0.6s ease-out backwards;
+        }
+
+        .hero-info-item:nth-child(1) { animation-delay: 0.6s; }
+        .hero-info-item:nth-child(2) { animation-delay: 0.7s; }
+        .hero-info-item:nth-child(3) { animation-delay: 0.8s; }
+
+        .hero-info-item:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .hero-info-item i {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(212,175,55,0.15);
+        }
+
+        .hero-action-circles {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.9s backwards;
+        }
+
+        .circle-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(44,24,16,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circle-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: scale(0);
+            transition: var(--transition);
+        }
+
+        .circle-btn:hover::before {
+            transform: scale(1);
+        }
+
+        .circle-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .circle-btn.phone { background: var(--primary-brown); color: var(--gold); }
+        .circle-btn.email { background: var(--primary-dark); color: var(--gold); }
+        .circle-btn.whatsapp { background: #25D366; color: var(--white); }
+
+        .download-resume-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-gold);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 1s backwards;
+            text-decoration: none;
+        }
+
+        .download-resume-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .download-resume-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .download-resume-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212,175,55,0.3);
+        }
+
+        .summary-hero-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-luxury);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+            animation: slideInRight 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-hero-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            color: rgba(212,175,55,0.05);
+            line-height: 0;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .summary-hero-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .summary-header {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .summary-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .summary-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .summary-text {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
+        }
+
+        .summary-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .summary-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--cream-light);
+            border-radius: 16px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            animation: fadeInLeft 0.6s ease-out backwards;
+        }
+
+        .summary-bullets li:nth-child(1) { animation-delay: 0.6s; }
+        .summary-bullets li:nth-child(2) { animation-delay: 0.7s; }
+        .summary-bullets li:nth-child(3) { animation-delay: 0.8s; }
+
+        .summary-bullets li:hover {
+            background: var(--white);
+            border-color: var(--gold);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .summary-bullets li::before {
+            content: '→';
+            font-size: 1.25rem;
+            color: var(--gold);
+            font-weight: 700;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .summary-bullets li:hover::before {
+            transform: translateX(5px);
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        /* Carl Lewis Achievement Section - COMPACT */
+        .carl-lewis-section {
+            background: var(--white);
+            padding: 3rem 0;
+        }
+
+        .carl-lewis-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .achievement-card {
+            background: var(--cream-light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--gold);
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '9';
+            position: absolute;
+            top: -30px;
+            right: 30px;
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            font-weight: 700;
+            color: rgba(212,175,55,0.06);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .carl-image-wrapper {
+            position: relative;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .carl-frame {
+            background: var(--white);
+            padding: 12px;
+            border-radius: 16px;
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.15),
+                0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .carl-frame:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.2),
+                0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .carl-frame img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .achievement-content {
+            position: relative;
+            z-index: 1;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .achievement-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--accent-gold);
+            border-radius: var(--radius-pill);
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .achievement-badge i {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+        }
+
+        .achievement-badge span {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+        }
+
+        .achievement-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            line-height: 1.3;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .achievement-subtitle {
+            font-size: 1.05rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .achievement-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .production-credit {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border-left: 4px solid var(--gold);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .production-credit strong {
+            color: var(--primary-dark);
+            font-size: 1rem;
+        }
+
+        .production-credit span {
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        .achievement-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            border-left: 3px solid var(--gold);
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .highlight-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .highlight-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .highlight-icon i {
+            font-size: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .highlight-text {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* IKTARA & Mohar Showcase Section */
+        .iktara-section {
+            background: var(--cream-light);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iktara-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .iktara-content {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .iktara-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .iktara-description {
+            margin-bottom: 2.5rem;
+        }
+
+        .iktara-description h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .iktara-description p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .iktara-challenge {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--white);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .iktara-challenge p {
+            color: var(--primary-dark);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .iktara-challenge strong {
+            color: var(--gold-dark);
+        }
+
+        .collection-note {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--cream-light);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* 3D Polaroid Gallery */
+        .iktara-gallery {
+            position: relative;
+            height: 600px;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .polaroid {
+            position: absolute;
+            background: var(--white);
+            padding: 15px;
+            padding-bottom: 60px;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.2),
+                0 3px 8px rgba(0,0,0,0.15);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.3),
+                0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10 !important;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .polaroid-1 {
+            width: 400px;
+            height: 280px;
+            top: 0;
+            right: 0;
+            transform: rotate(5deg);
+            z-index: 3;
+            animation: floatPolaroid1 6s ease-in-out infinite;
+        }
+
+        @keyframes floatPolaroid1 {
+            0%, 100% { transform: rotate(5deg) translateY(0); }
+            50% { transform: rotate(5deg) translateY(-10px); }
+        }
+
+        .polaroid-2 {
+            width: 350px;
+            height: 450px;
+            top: 80px;
+            left: 50px;
+            transform: rotate(-8deg);
+            z-index: 2;
+            animation: floatPolaroid2 7s ease-in-out infinite;
+        }
+
+        @keyframes floatPolaroid2 {
+            0%, 100% { transform: rotate(-8deg) translateY(0); }
+            50% { transform: rotate(-8deg) translateY(-15px); }
+        }
+
+        .polaroid-3 {
+            width: 320px;
+            height: 420px;
+            bottom: 0;
+            right: 80px;
+            transform: rotate(3deg);
+            z-index: 1;
+            animation: floatPolaroid3 8s ease-in-out infinite;
+        }
+
+        @keyframes floatPolaroid3 {
+            0%, 100% { transform: rotate(3deg) translateY(0); }
+            50% { transform: rotate(3deg) translateY(-12px); }
+        }
+
+        /* Mandate Section - NEW */
+        .mandate-section {
+            background: var(--white);
+            padding: 5rem 0;
+        }
+
+        .mandate-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mandate-image-wrapper {
+            position: relative;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .mandate-frame {
+            background: var(--cream-light);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+        }
+
+        .mandate-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .mandate-frame img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .mandate-content {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .mandate-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            line-height: 1.3;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .mandate-quote {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            padding: 2rem;
+            background: var(--cream-light);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .mandate-quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(212,175,55,0.2);
+            line-height: 1;
+        }
+
+        .mandate-divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--gold), transparent);
+            margin: 2rem 0;
+        }
+
+        .mandate-production-note {
+            padding: 1.5rem;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .mandate-production-note p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .mandate-production-note strong {
+            color: var(--gold-dark);
+            font-size: 1.05rem;
+        }
+
+        /* How Data Delivers Section */
+        .data-mystique-section {
+            background: var(--cream-light);
+            padding: 5rem 0;
+        }
+
+        .data-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .data-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            color: var(--primary-dark);
+            margin-bottom: 4rem;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .worker-image-container {
+            position: relative;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .worker-frame {
+            background: var(--white);
+            padding: 20px;
+            padding-bottom: 80px;
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.25),
+                0 5px 15px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            transform: rotate(-5deg);
+            transition: var(--transition);
+        }
+
+        .worker-frame:hover {
+            transform: rotate(-5deg) scale(1.03);
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.35),
+                0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .worker-frame img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .data-system {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .system-diagram {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            margin-bottom: 3rem;
+        }
+
+        .diagram-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .input-items {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .input-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--cream-light);
+            border-radius: 16px;
+            transition: var(--transition);
+        }
+
+        .input-item:hover {
+            background: var(--cream);
+            transform: translateX(10px);
+        }
+
+        .input-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold-dark);
+            font-size: 1.5rem;
+        }
+
+        .input-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .arrow-connector {
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 0 2rem;
+        }
+
+        .system-circle {
+            width: 150px;
+            height: 150px;
+            background: var(--white);
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            box-shadow: 0 8px 24px rgba(212,175,55,0.2);
+            position: relative;
+        }
+
+        .system-circle::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            opacity: 0.3;
+        }
+
+        .operational-task {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            margin-bottom: 2rem;
+        }
+
+        .operational-task h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .operational-task p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .brand-impact {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+        }
+
+        .brand-impact h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+        }
+
+        .impact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--cream-light);
+            border-radius: 16px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .impact-item:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+            transform: translateX(10px);
+        }
+
+        .impact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .impact-content strong {
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Core Competencies */
+        .competencies-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .competency-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            transition: var(--transition);
+            border: 2px solid var(--cream);
+            text-align: center;
+        }
+
+        .competency-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .comp-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .competency-card:hover .comp-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .competency-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .competency-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Production Lifecycle */
+        .lifecycle-section {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            margin-top: 2rem;
+        }
+
+        .lifecycle-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .lifecycle-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+
+        .lifecycle-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .lifecycle-flow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(to right, var(--cream), var(--gold), var(--cream));
+            z-index: 0;
+        }
+
+        .lifecycle-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .step-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+        }
+
+        .lifecycle-step:hover .step-icon-wrapper {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-gold);
+            background: var(--cream-light);
+        }
+
+        .step-icon-wrapper i {
+            font-size: 2.5rem;
+            color: var(--gold-dark);
+        }
+
+        .step-label {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .lifecycle-details {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .detail-item {
+            padding: 1.5rem 2rem;
+            background: var(--cream-light);
+            border-radius: 20px;
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .detail-item:hover {
+            background: var(--cream);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .detail-item h4 {
+            color: var(--primary-dark);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .detail-item p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .exp-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+            position: relative;
+            padding-left: 3.5rem;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 2.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(212,175,55,0.2);
+        }
+
+        .exp-card:hover {
+            border-color: var(--gold);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .exp-date {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--cream-light);
+            border: 1px solid var(--gold);
+            color: var(--gold-dark);
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .exp-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .exp-company {
+            color: var(--gold-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-details {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .exp-details li {
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .exp-details li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .portfolio-item {
+            aspect-ratio: 1;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44,24,16,0.9), rgba(107,86,63,0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .overlay-text {
+            transform: translateY(0);
+        }
+
+        /* Education */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .edu-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+        }
+
+        .edu-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .edu-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: var(--accent-gold);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.75rem;
+            transition: var(--transition);
+        }
+
+        .edu-card:hover .edu-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Personal Info */
+        .personal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .personal-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-luxury);
+            border: 2px solid var(--cream);
+            transition: var(--transition);
+        }
+
+        .personal-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .personal-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .personal-card h3 i {
+            color: var(--gold);
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: var(--cream-light);
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+        }
+
+        .info-row:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .info-value {
+            color: var(--text-light);
+        }
+
+        .hobbies-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hobbies-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--cream-light);
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+        }
+
+        .hobbies-list li:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .hobbies-list li::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        /* Footer Image Section */
+        .footer-image-section {
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-image-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .footer-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Copyright Footer */
+        .copyright-footer {
+            background: var(--primary-dark);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .copyright-text {
+            color: var(--cream);
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-gold);
+            z-index: 1000;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(212,175,55,0.4);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE RESPONSIVE - FULL IMPLEMENTATION */
+        @media (max-width: 1200px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .competencies-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lifecycle-flow {
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: center;
+            }
+
+            .lifecycle-flow::before {
+                display: none;
+            }
+
+            .iktara-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .iktara-gallery {
+                height: 500px;
+                margin: 0 auto;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .achievement-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .achievement-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .mandate-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .personal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .worker-frame {
+                transform: rotate(0deg);
+            }
+
+            .worker-frame:hover {
+                transform: rotate(0deg) scale(1.02);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { 
+                padding: 1rem; 
+            }
+
+            .hero-section {
+                padding: 2rem 0;
+                min-height: auto;
+            }
+
+            .summary-title { 
+                font-size: 1.75rem; 
+            }
+
+            .section-title { 
+                font-size: 2rem; 
+            }
+
+            .competencies-row {
+                grid-template-columns: 1fr;
+            }
+
+            .edu-grid { 
+                grid-template-columns: 1fr; 
+            }
+
+            .lifecycle-flow {
+                flex-direction: column;
+            }
+
+            .iktara-main-title {
+                font-size: 2rem;
+            }
+
+            .data-main-title {
+                font-size: 2rem;
+            }
+
+            .achievement-title {
+                font-size: 1.5rem;
+            }
+
+            .mandate-main-title {
+                font-size: 1.75rem;
+            }
+
+            .polaroid-1 { 
+                width: 240px; 
+                height: 180px;
+                top: 0;
+                right: 10px;
+            }
+            
+            .polaroid-2 { 
+                width: 220px; 
+                height: 300px;
+                top: 60px;
+                left: 20px;
+            }
+            
+            .polaroid-3 { 
+                width: 200px; 
+                height: 280px;
+                bottom: 0;
+                right: 30px;
+            }
+
+            .iktara-gallery {
+                height: 400px;
+            }
+
+            .worker-frame img {
+                height: 450px;
+            }
+
+            .carl-frame img {
+                height: 350px;
+            }
+
+            .mandate-frame img {
+                height: 400px;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+
+            .iktara-section,
+            .data-mystique-section {
+                padding: 3rem 0;
+            }
+
+            .hero-profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .summary-text {
+                font-size: 0.95rem;
+            }
+
+            .summary-bullets li {
+                font-size: 0.9rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { 
+                font-size: 1.5rem; 
+            }
+
+            .hero-role {
+                font-size: 0.8rem;
+            }
+
+            .summary-title { 
+                font-size: 1.5rem; 
+            }
+
+            .portfolio-grid { 
+                grid-template-columns: 1fr; 
+            }
+
+            .iktara-main-title {
+                font-size: 1.75rem;
+            }
+
+            .data-main-title {
+                font-size: 1.75rem;
+            }
+
+            .achievement-title {
+                font-size: 1.25rem;
+            }
+
+            .mandate-main-title {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-profile-img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .circle-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 1.1rem;
+            }
+
+            .download-resume-btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .polaroid-1 { 
+                width: 200px; 
+                height: 150px;
+            }
+            
+            .polaroid-2 { 
+                width: 180px; 
+                height: 250px;
+            }
+            
+            .polaroid-3 { 
+                width: 170px; 
+                height: 230px;
+            }
+
+            .iktara-gallery {
+                height: 350px;
+            }
+
+            .achievement-card,
+            .mandate-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="profile-hero-card">
+                <div class="hero-profile-img">
+                    <img src="assets/profile.jpg" alt="Ramrishi Maurya">
+                </div>
+                
+                <h1 class="hero-title">Ramrishi Maurya</h1>
+                <p class="hero-role">Production Assistant Manager</p>
+                
+                <div class="hero-contact-info">
+                    <div class="hero-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91-9621412533</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>rishimaurya1996@gmail.com</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Noida sec-101, Pin-201306</span>
+                    </div>
+                </div>
+
+                <div class="hero-action-circles">
+                    <a href="tel:+919621412533" class="circle-btn phone" title="Call">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="mailto:rishimaurya1996@gmail.com" class="circle-btn email" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/919621412533" class="circle-btn whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                <a href="assets/Ramrishi-Maurya-Resume.pdf" download="Ramrishi-Maurya-Resume.pdf" class="download-resume-btn">
+                    <i class="fas fa-download"></i>
+                    <span>Download Resume</span>
+                </a>
+            </div>
+
+            <div class="summary-hero-card">
+                <div class="summary-header">
+                    <span class="summary-label">Professional Excellence</span>
+                    <h2 class="summary-title">Transforming Fashion Ideas Into Reality</h2>
+                </div>
+                
+                <p class="summary-text">
+                    Dedicated production professional with over five years of comprehensive experience in managing luxury fashion manufacturing, quality control, and vendor coordination. Expert in transforming designer visions into finished products while maintaining the highest standards of craftsmanship and timely delivery.
+                </p>
+
+                <ul class="summary-bullets">
+                    <li>Managed complete production operations for high-end couture collections with systematic tracking and quality assurance</li>
+                    <li>Implemented data-driven production reports to monitor progress and ensure on-time delivery of all orders</li>
+                    <li>Skilled in coordinating with artisans, vendors, and design teams to bring creative concepts to life with precision</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IKTARA & Mohar Showcase Section -->
+<section class="iktara-section">
+    <div class="iktara-container">
+        <div class="iktara-content">
+            <h2 class="iktara-main-title">A Vision Woven from Romance and Mystique</h2>
+            
+            <div class="iktara-description">
+                <h3>IKTARA</h3>
+                <p><em>IKTARA is romance incarnate, where fabric becomes poetry and color, the language of desire.</em></p>
+                <p>Delicately embroidered botanicals and appliqué blooms capture fleeting moments of intimacy, translating them into timeless artistry.</p>
+                <p><strong>A serenade to oneness.</strong></p>
+            </div>
+
+            <div class="iktara-description">
+                <h3>Mohar</h3>
+                <p><em>Mohar unfolds like a secret garden, mystical, and full of emotional richness...</em></p>
+                <p>In Matka and Katan silks, laser-cut florals curve around the body like a language spoken without sound. Mohar is for the man who values soul, with just the right dash of understated luxury.</p>
+            </div>
+
+            <div class="iktara-challenge">
+                <p><strong>The Challenge:</strong> Translating ephemeral vision into flawless, tangible artistry.</p>
+                <div class="collection-note">
+                    <p><em>Note: IKTARA and Mohar are signature collections by Sahil Kochhar. Production execution and quality management handled by Ramrishi Maurya.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="iktara-gallery">
+            <div class="polaroid polaroid-1">
+                <img src="assets/iktara1.jpg" alt="IKTARA Collection - Floral Details">
+            </div>
+            <div class="polaroid polaroid-2">
+                <img src="assets/iktara2.jpg" alt="IKTARA Collection - Model">
+            </div>
+            <div class="polaroid polaroid-3">
+                <img src="assets/iktara3.jpg" alt="Mohar Collection - Menswear">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Competencies -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Core Competencies</span>
+            <h2 class="section-title">Excellence in Execution</h2>
+        </div>
+        
+        <div class="competencies-row reveal">
+            <div class="competency-card">
+                <div class="comp-icon"><i class="fas fa-cogs"></i></div>
+                <h3>Production Management</h3>
+                <p>Complete in-house and outsourced production lifecycle management with data-driven visibility</p>
+            </div>
+            
+            <div class="competency-card">
+                <div class="comp-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Performance Tracking</h3>
+                <p>Daily Production Reports to track progress against monthly forecasts</p>
+            </div>
+
+            <div class="competency-card">
+                <div class="comp-icon"><i class="fas fa-gem"></i></div>
+                <h3>Quality Assurance</h3>
+                <p>Rigorous QC checkpoints maintaining highest craftsmanship standards</p>
+            </div>
+
+            <div class="competency-card">
+                <div class="comp-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Vendor Relations</h3>
+                <p>Strategic partnerships with artisans and cost optimization expertise</p>
+            </div>
+        </div>
+
+        <!-- Production Lifecycle -->
+        <div class="lifecycle-section reveal">
+            <h3 class="lifecycle-title">End-to-End Production Management</h3>
+            <p class="lifecycle-subtitle">At Sahil Kochhar, managed the complete in-house and outsourced production lifecycle for couture and ready-to-wear lines.</p>
+            
+            <div class="lifecycle-flow">
+                <div class="lifecycle-step">
+                    <div class="step-icon-wrapper">
+                        <i class="far fa-lightbulb"></i>
+                    </div>
+                    <span class="step-label">Concept</span>
+                </div>
+
+                <div class="lifecycle-step">
+                    <div class="step-icon-wrapper">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <span class="step-label">Sourcing</span>
+                </div>
+
+                <div class="lifecycle-step">
+                    <div class="step-icon-wrapper">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="step-label">Production</span>
+                </div>
+
+                <div class="lifecycle-step">
+                    <div class="step-icon-wrapper">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <span class="step-label">QC</span>
+                </div>
+
+                <div class="lifecycle-step">
+                    <div class="step-icon-wrapper">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <span class="step-label">Delivery</span>
+                </div>
+            </div>
+
+            <div class="lifecycle-details">
+                <div class="detail-item">
+                    <h4>Creating a Single Source of Truth</h4>
+                    <p>'Channelized all in-house activity data on the system, updated by the team daily' to ensure total visibility and data integrity across all production operations.</p>
+                </div>
+
+                <div class="detail-item">
+                    <h4>Driving Performance with Data</h4>
+                    <p>'Implemented Daily Production Reports (DPR) compiled merchandiser-wise' to rigorously track progress against monthly target forecasts and maintain accountability.</p>
+                </div>
+
+                <div class="detail-item">
+                    <h4>Ensuring Accountability</h4>
+                    <p>Responsible for the end-to-end process, from PO details to final quality charts and test reports, ensuring seamless execution and delivery excellence.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How Data Delivers the "Mystique of the Forest" Section -->
+<section class="data-mystique-section">
+    <div class="data-container">
+        <h2 class="data-main-title">How Data Delivers the "Mystique of the Forest."</h2>
+        
+        <div class="data-grid">
+            <!-- Tilted Worker Image - Left Side -->
+            <div class="worker-image-container">
+                <div class="worker-frame">
+                    <img src="assets/worker1.jpg" alt="Artisan at Work">
+                </div>
+            </div>
+
+            <!-- Data System & Impact - Right Side -->
+            <div class="data-system">
+                <!-- System Diagram -->
+                <div class="system-diagram">
+                    <div class="diagram-flow">
+                        <div class="input-items">
+                            <div class="input-item">
+                                <div class="input-icon">
+                                    <i class="fas fa-scroll"></i>
+                                </div>
+                                <span class="input-label">Material Status</span>
+                            </div>
+                            <div class="input-item">
+                                <div class="input-icon">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <span class="input-label">Artisan Hours</span>
+                            </div>
+                            <div class="input-item">
+                                <div class="input-icon">
+                                    <i class="fas fa-cut"></i>
+                                </div>
+                                <span class="input-label">Stitching Progress</span>
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-connector">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="system-circle">
+                            SYSTEM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operational Task -->
+                <div class="operational-task">
+                    <h3>The Operational Task</h3>
+                    <p>"Channelized all in-house activity data on the system, updated by the team daily basis."</p>
+                </div>
+
+                <!-- Brand Impact -->
+                <div class="brand-impact">
+                    <h3>The Brand Impact</h3>
+                    <div class="impact-list">
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="impact-content">
+                                <strong>Real-time Visibility:</strong>
+                                <p>Tracks every component of a complex garment, from applique to organza sourcing.</p>
+                            </div>
+                        </div>
+
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="impact-content">
+                                <strong>Proactive Problem Solving:</strong>
+                                <p>Identifies bottlenecks before they delay a client's order.</p>
+                            </div>
+                        </div>
+
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="impact-content">
+                                <strong>Ensuring the Promise:</strong>
+                                <p>Guarantees that the mystical vision of "Rooh" arrives on time and as promised, protecting the brand's high-end service reputation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Experience -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Career Journey</span>
+            <h2 class="section-title">Professional Experience</h2>
+        </div>
+        
+        <div class="experience-grid reveal">
+            <div class="exp-card">
+                <span class="exp-date">Jan 2023 – Present</span>
+                <h3>PD Merchant (Apparel)</h3>
+                <p class="exp-company">Sahil Kochhar (Couture & Luxury)</p>
+                <ul class="exp-details">
+                    <li>Managing comprehensive in-house and outsourced production operations for high-end couture collections including IKTARA and Mohar</li>
+                    <li>Handled production execution for iconic runway looks including Carl Lewis's "Halo of Endurance" ensemble</li>
+                    <li>Implemented systematic daily data update processes creating a Single Source of Truth for all production activities</li>
+                    <li>Developed and maintained Daily Production Reports (DPR) compiled merchandiser-wise for progress tracking</li>
+                    <li>Coordinated with cross-functional teams including design, quality, and logistics for seamless workflow</li>
+                    <li>Responsible for end-to-end process from PO details to final quality charts and test reports</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">Dec 2019 – Dec 2022</span>
+                <h3>Quality Control Inspector & Production Executive</h3>
+                <p class="exp-company">High Street Essential Pvt. Ltd</p>
+                <ul class="exp-details">
+                    <li>End-to-end merchandising and retail process control to achieve business targets</li>
+                    <li>Reviewed Tech Packs with cross-functional teams to ensure design intent translation</li>
+                    <li>Maintained comprehensive records for PO details, production charts, and test reports</li>
+                    <li>Managed all sample stages including Proto, Fit, Size Set, and Salesman samples</li>
+                    <li>Coordinated online presence including website and social media updates</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">Jan 2019 – Dec 2019</span>
+                <h3>Production Executive</h3>
+                <p class="exp-company">Paramount Product Pvt.</p>
+                <ul class="exp-details">
+                    <li>Supervised production operations and maintained quality standards across manufacturing units</li>
+                    <li>Coordinated with vendors and suppliers for timely material deliveries</li>
+                    <li>Implemented quality control measures and conducted regular production audits</li>
+                    <li>Maintained production documentation, reports, and compliance records</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">Sep 2017 – Dec 2018</span>
+                <h3>Assistant Merchandiser</h3>
+                <p class="exp-company">WEAR WELL INDIA PVT. LTD</p>
+                <ul class="exp-details">
+                    <li>Assisted in merchandising operations and vendor coordination activities</li>
+                    <li>Supported quality assurance initiatives and inspection processes</li>
+                    <li>Maintained sample tracking system and documentation for all development stages</li>
+                    <li>Collaborated with design and production teams for seamless execution</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Carl Lewis Achievement Section - COMPACT -->
+<section class="carl-lewis-section">
+    <div class="carl-lewis-container">
+        <div class="section-header reveal">
+            <span class="section-label">Iconic Achievement</span>
+            <h2 class="section-title">Crafting Excellence for a Legend</h2>
+        </div>
+
+        <div class="achievement-card reveal">
+            <div class="carl-image-wrapper">
+                <div class="carl-frame">
+                    <img src="assets/carl.jpg" alt="Carl Lewis in Sahil Kochhar Runway Look">
+                </div>
+            </div>
+
+            <div class="achievement-content">
+                <div class="achievement-badge">
+                    <i class="fas fa-medal"></i>
+                    <span>9 Olympic Gold Medals</span>
+                </div>
+
+                <h2 class="achievement-title">Carl Lewis in "The Halo of Endurance"</h2>
+                
+                <p class="achievement-subtitle">Legendary Athlete's Iconic Runway Moment</p>
+
+                <p class="achievement-description">
+                    Managed production execution for Carl Lewis's iconic runway look designed by Sahil Kochhar. The spectacular "Halo of Endurance" ensemble featured a dramatic radiating halo backdrop, symbolizing Olympic excellence through meticulous craftsmanship.
+                </p>
+
+                <div class="production-credit">
+                    <strong>Production Management:</strong> <span>Ramrishi Maurya</span>
+                </div>
+
+                <div class="achievement-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <span class="highlight-text">Production & QC Management</span>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span class="highlight-text">9× Olympic Champion</span>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="highlight-text">Haute Couture Precision</span>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <span class="highlight-text">Runway Ready Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Visual Portfolio</span>
+            <h2 class="section-title">Featured Work</h2>
+        </div>
+        
+        <div class="portfolio-grid reveal">
+            <div class="portfolio-item">
+                <img src="assets/work1.jpg" alt="Work 1">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Couture Details</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work2.jpg" alt="Work 2">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Quality Check</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work3.jpg" alt="Work 3">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Fabric Sourcing</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work4.jpg" alt="Work 4">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Production Line</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work5.jpg" alt="Work 5">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Embroidery</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work6.jpg" alt="Work 6">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Tech Packs</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work7.jpg" alt="Work 7">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Fitting Session</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/work8.jpg" alt="Work 8">
+                <div class="portfolio-overlay">
+                    <span class="overlay-text">Final Product</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Mandate Section - NEW - BEFORE EDUCATION -->
+<section class="mandate-section">
+    <div class="mandate-container">
+        <div class="mandate-image-wrapper">
+            <div class="mandate-frame">
+                <img src="assets/iktara4.jpg" alt="Luxury Fashion Garment">
+            </div>
+        </div>
+
+        <div class="mandate-content">
+            <h2 class="mandate-main-title">The Mandate: To Elevate a Garment from Fashion to Art.</h2>
+
+            <div class="mandate-quote">
+                "Every piece developed at our workshop allows us the opportunity to create a masterpiece with the help of our artisans."
+            </div>
+
+            <div class="mandate-divider"></div>
+
+            <div class="mandate-production-note">
+                <p><strong>Production Excellence:</strong> This philosophy of transforming garments into art is brought to life through meticulous production management by <strong>Ramrishi Maurya</strong>, ensuring every intricate detail meets the highest standards of luxury craftsmanship.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Qualifications</span>
+            <h2 class="section-title">Education</h2>
+        </div>
+        
+        <div class="edu-grid reveal">
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h4 style="font-size:1.25rem; margin-bottom:0.5rem; color:var(--primary-dark);">Bachelor of Arts</h4>
+                <p style="color:var(--text-light); font-size:0.9rem;">Siddharth University</p>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <h4 style="font-size:1.25rem; margin-bottom:0.5rem; color:var(--primary-dark);">Intermediate</h4>
+                <p style="color:var(--text-light); font-size:0.9rem;">U.P. Board</p>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4 style="font-size:1.25rem; margin-bottom:0.5rem; color:var(--primary-dark);">DCA</h4>
+                <p style="color:var(--text-light); font-size:0.9rem;">Diploma in Computer Application</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Personal Information -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Personal Details</span>
+            <h2 class="section-title">About Me</h2>
+        </div>
+        
+        <div class="personal-grid reveal">
+            <div class="personal-card">
+                <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+                <div class="info-grid">
+                    <div class="info-row">
+                        <span class="info-label">Father's Name</span>
+                        <span class="info-value">Ramjeet Maurya</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-value">15 Aug 1996</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Gender</span>
+                        <span class="info-value">Male</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Marital Status</span>
+                        <span class="info-value">Single</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Nationality</span>
+                        <span class="info-value">Indian</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Location</span>
+                        <span class="info-value">Noida, UP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-card">
+                <h3><i class="fas fa-heart"></i> Hobbies & Interests</h3>
+                <ul class="hobbies-list">
+                    <li>Fashion Industry Research</li>
+                    <li>Quality Control & Process Optimization</li>
+                    <li>Traveling & Culture Exploration</li>
+                    <li>Business & Management Books</li>
+                    <li>Photography & Visual Arts</li>
+                    <li>Team Building & Mentoring</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Image Section -->
+<section class="footer-image-section">
+    <div class="footer-image-wrapper">
+        <img src="assets/bottom.jpg" alt="Ramrishi Maurya Portfolio Footer">
+    </div>
+</section>
+
+<!-- Copyright Footer -->
+<footer class="copyright-footer">
+    <p class="copyright-text">© 2025 Ramrishi Maurya. All Rights Reserved.</p>
+</footer>
+
+<div class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+const scrollTop = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTop.classList.add('active');
+    } else {
+        scrollTop.classList.remove('active');
+    }
+});
+
+scrollTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1 });
+
+reveals.forEach(reveal => revealObserver.observe(reveal));
+</script>
+
+</body>
+</html>
